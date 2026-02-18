@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Smart Bookmark App
 
-## Getting Started
+A secure bookmark manager built with Next.js and Supabase.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🌍 Live Demo
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+https://sanitr-bookmarks.vercel.app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🚀 Features
 
-## Learn More
+- Google OAuth login (no passwords)
+- Private bookmarks per user
+- Add & delete bookmarks
+- Real-time updates
+- Responsive modern UI
+- Secure database access with Row Level Security
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🛠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js (App Router)
+- Supabase (Auth, Database, Realtime)
+- Tailwind CSS
+- Vercel Deployment
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ⚙️ Local Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repo
+ git clone https://github.com/sanitr/smart-bookmark-app
+
+2. Install dependencies
+    Create `.env.local`
+
+  NEXT_PUBLIC_SUPABASE_URL=your_url
+  NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+  
+4. Run locally
+
+ 
+---
+
+### 🔐 Security
+
+- Row Level Security ensures users can only access their own bookmarks.
+- OAuth authentication handled securely via Supabase.
+
+---
+
+### ⚠️ Challenges Faced & Solutions
+
+**OAuth redirect errors**  
+→ Fixed by configuring Supabase and Google OAuth redirect URLs.
+
+**Bookmarks not saving due to RLS**  
+→ Added policies allowing authenticated users to insert/select their own data.
+
+**Bookmarks not showing after insert**  
+→ Ensured session loads before fetching and refreshed state after insert.
+
+**Production login redirecting to localhost**  
+→ Updated Supabase Site URL & Redirect URLs to production domain.
+
+---
+
+### 👩‍💻 Author
+
+Swastika Sengupta
+
+
+
+
+
+
+
+
+
